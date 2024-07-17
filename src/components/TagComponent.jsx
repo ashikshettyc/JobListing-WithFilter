@@ -2,8 +2,8 @@
 
 const TagComponent = ({ tags, removeTag, handleClear }) => {
   return (
-    <div className="flex flex-wrap justify-between items-center p-4 bg-Light-Grayish-cyan-200 shadow-sm shadow-Breaker-Bay/60 rounded-lg">
-      <div className="flex gap-2">
+    <div className="flex justify-between items-center p-4 bg-Light-Grayish-cyan-200 shadow-sm shadow-Breaker-Bay/60 rounded-lg">
+      <div className="flex flex-wrap gap-2 ">
         {tags.map((tag, index) => (
           <div key={index} className="flex items-center bg-Dark-Grayish-Cyan/40 text-white rounded-md">
             <span className="px-2 ">{tag}</span>

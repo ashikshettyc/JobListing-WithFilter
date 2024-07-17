@@ -34,22 +34,22 @@ const Profile = () => {
   console.log(filteredProfiles);
 
   return (
-    <div className="space-y-4 w-4/5 mx-auto">
+    <div className="space-y-8 md:space-y-4 w-4/5 mx-auto">
       <div className="w-full h-12 mb-6">
         <TagComponent tags={tags} removeTag={handleRemove} handleClear={handleClear} />
       </div>
       {(filteredProfiles).map((profile) => (
         <div
           key={profile.id}
-          className={`flex items-center p-4 bg-white rounded-lg shadow-md shadow-Breaker-Bay/4 ${(profile.id === 1 || profile.id === 2)  ? "border-l-2 border-Dark-Grayish-Cyan" : ""} `}
+          className={`relative md:flex items-center p-4 bg-white rounded-lg shadow-md shadow-Breaker-Bay/4 ${(profile.id === 1 || profile.id === 2)  ? "border-l-2 border-Dark-Grayish-Cyan" : ""} `}
         >{
           console.log(profile.id)}
           <img
             src={profile.logo}
             alt={`${profile.company} logo`}
-            className="w-16 h-16 mr-4"
+            className="absolute md:relative -top-4 w-16 h-16 mr-4 md:top-0"
           />
-          <div className="flex-grow">
+          <div className="md:flex-grow pt-10 md:pt-0">
             <div className="flex items-center space-x-2">
               <h2 className="text-md font-bold text-Breaker-Bay">
                 {profile.company}
@@ -74,7 +74,7 @@ const Profile = () => {
               <span>{profile.location}</span>
             </div>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex pt-3 md:pt-0 mt-3 md:mt-0 flex-wrap gap-3 md:gap-0 space-x-2 border-t-2 md:border-0">
             {[
               profile.role,
               profile.level,
